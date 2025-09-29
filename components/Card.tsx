@@ -49,7 +49,7 @@ export default function Card({
           src={imageSrc}
           alt={imageAlt}
           fill
-          sizes="(min-width: 1280px) 360px, (min-width: 1024px) 300px, (min-width: 640px) 45vw, 90vw"
+          sizes="(min-width: 1280px) 300px, (min-width: 1024px) 280px, (min-width: 640px) 40vw, 85vw"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
