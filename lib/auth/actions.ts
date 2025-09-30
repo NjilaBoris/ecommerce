@@ -1,6 +1,6 @@
 "use server";
 
-import {cookies, headers} from "next/headers";
+import { cookies, headers } from "next/headers";
 import { z } from "zod";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
@@ -62,10 +62,10 @@ const signUpSchema = z.object({
 
 export async function signUp(formData: FormData) {
   const rawData = {
-    name: formData.get('name') as string,
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
-  }
+    name: formData.get("name") as string,
+    email: formData.get("email") as string,
+    password: formData.get("password") as string,
+  };
 
   const data = signUpSchema.parse(rawData);
 
@@ -88,9 +88,9 @@ const signInSchema = z.object({
 
 export async function signIn(formData: FormData) {
   const rawData = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
-  }
+    email: formData.get("email") as string,
+    password: formData.get("password") as string,
+  };
 
   const data = signInSchema.parse(rawData);
 
@@ -108,8 +108,8 @@ export async function signIn(formData: FormData) {
 export async function getCurrentUser() {
   try {
     const session = await auth.api.getSession({
-      headers: await headers()
-    })
+      headers: await headers(),
+    });
 
     return session?.user ?? null;
   } catch (e) {
